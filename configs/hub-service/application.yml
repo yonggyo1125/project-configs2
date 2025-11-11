@@ -3,7 +3,7 @@ server:
 
 
 message:
-  test1: '테스트 메세지1'
-  test2: '테스트 메세지2'
+  test1: '(수정)테스트 메세지1'
+  test2: '(수정)테스트 메세지2'
 
 message3: '테스트 메세지3'
