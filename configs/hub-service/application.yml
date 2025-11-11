@@ -7,9 +7,3 @@ message:
   test2: '(재수정)테스트 메세지2'
 
 message3: '(재수정)테스트 메세지3'
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh
