@@ -20,9 +20,3 @@ spring:
             - Path=/v1/product/**
           filters:
             - 'RewritePath=/v1/product/(?<path>.*), /\${path}'
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
