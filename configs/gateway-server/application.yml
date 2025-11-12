@@ -20,3 +20,10 @@ spring:
             - Path=/v1/product/**
           filters:
             - 'RewritePath=/v1/product/(?<path>.*), /\${path}'
+
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/v1/user/**
+          filters:
+            - 'RewritePath=/v1/user/(?<path>.*), /\${path}'
