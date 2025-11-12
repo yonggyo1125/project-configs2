@@ -5,3 +5,18 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+
+      routes:
+        - id: hub-service
+          uri: lb://hub-service
+          predicates:
+            - Path=/v1/hub/**
+          filters:
+            - 'RewritePath=/v1/hub/(?<path>.*), /\${path}'
+
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/v1/product/**
+          filters:
+            - 'RewritePath=/v1/product/(?<path>.*), /\${path}'
