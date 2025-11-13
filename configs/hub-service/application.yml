@@ -1,5 +1,5 @@
-message:
-  test1: '(재수정)테스트 메세지1'
-  test2: '(재수정)테스트 메세지2'
-
-message3: '(재수정)테스트 메세지3'
+rabbit:
+  product:
+    exchange: sparta
+    queue: hub
+    routing-key: product.#
