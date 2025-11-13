@@ -1,0 +1,5 @@
+rabbit:
+  product:
+    exchange: sparta
+    queue: hub
+    routing-key: 'product.#'
