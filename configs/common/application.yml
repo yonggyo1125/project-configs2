@@ -4,7 +4,6 @@ spring:
     port: 5672
     username: ${RABBITMQ_USERNAME}
     password: ${RABBITMQ_PASSWORD}
-    virtual-host: /
 
   cloud:
     loadbalancer:
@@ -62,6 +61,13 @@ management:
       exposure:
         include: refresh
 
+  zipkin:
+    tracing:
+      endpoint: "http://localhost:9411/api/v2/spans" # Zipkin 수집 서버의 엔드포인트 URL을 입력합니다.
+  tracing:
+    sampling:
+      probability: 1.0
+
 keycloak:
   server-url: https://keycloak.code-factory.co.kr
   realm: codefactory
@@ -100,3 +106,4 @@ resilience4j:
         limitForPeriod: 50  # 주기당 최대 50개 요청 허용
         limitRefreshPeriod: 1s  # 제한이 1초마다 초기화됨
         timeoutDuration: 0ms  # 허가 대기 시간 (0ms는 대기 없이 즉시 거부)
+
