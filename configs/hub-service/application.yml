@@ -1,4 +1,8 @@
 spring:
+  ai:
+    vertex.ai.gemini:
+      projectId: gen-lang-client-0319521932
+      location: us-west1
   data:
     redis:
       host: localhost
