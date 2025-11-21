@@ -28,6 +28,13 @@ spring:
           filters:
             - 'RewritePath=/v1/user/(?<path>.*), /\${path}'
 
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/v1/order/**
+          filters:
+            - 'RewritePath=/v1/order/(?<path>.*), /\${path}'
+
 springdoc:
   enable-native-support: true
   api-docs:
@@ -44,3 +51,5 @@ springdoc:
         name: USER API
       - url: /hub-service/v3/api-docs
         name: HUB API
+      - url: /order-service/v3/api-docs
+        name: ORDER API
