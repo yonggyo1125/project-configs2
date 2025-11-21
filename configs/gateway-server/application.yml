@@ -38,6 +38,6 @@ springdoc:
     config-url: /v3/api-docs/swagger-config
     urls:
       - url: /user-service/v3/api-docs
-        name: USER
+        name: USER API
       - url: /hub-service/v3/api-docs
-        name: HUB
+        name: HUB API
