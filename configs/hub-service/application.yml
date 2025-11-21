@@ -42,6 +42,10 @@ springdoc:
   paths-to-match:
     - /**
 
+openapi:
+  service:
+    url: http://localhost:3000
+
 kakao:
   restapi:
     key: ${KAKAO_API_KEY}
