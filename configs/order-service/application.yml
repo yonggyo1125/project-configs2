@@ -27,7 +27,7 @@ spring:
 # 로그 설정
 logging:
   level:
-    org.hibernate.type: traceㄴ
+    org.hibernate.type: trace
     org.hibernate.orm.jdbc.bind: trace
 
 # OPEN DOC API 설정
