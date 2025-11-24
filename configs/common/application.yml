@@ -117,3 +117,6 @@ resilience4j:
         limitRefreshPeriod: 1s  # 제한이 1초마다 초기화됨
         timeoutDuration: 0ms  # 허가 대기 시간 (0ms는 대기 없이 즉시 거부)
 
+
+slack:
+  channel.code: ${SLACK_CHANNELCODE}
