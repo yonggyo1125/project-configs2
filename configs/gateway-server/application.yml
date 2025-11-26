@@ -12,14 +12,14 @@ spring:
           predicates:
             - Path=/v1/hub/**
           filters:
-            - 'RewritePath=/v1/hub/(?<path>.*), /\${path}'
+            - "RewritePath=/v1/hub(?:/(?<path>.*))?, /\\${path}"
 
         - id: product-service
           uri: lb://product-service
           predicates:
             - Path=/v1/product/**
           filters:
-            - 'RewritePath=/v1/product/(?<path>.*), /\${path}'
+            - "RewritePath=/v1/product(?:/(?<path>.*))?, /\\${path}"
 
         - id: user-service
           uri: lb://user-service
@@ -33,7 +33,7 @@ spring:
           predicates:
             - Path=/v1/order/**
           filters:
-            - 'RewritePath=/v1/order/(?<path>.*), /\${path}'
+            - "RewritePath=/v1/order(?:/(?<path>.*))?, /\\${path}"
 
 springdoc:
   enable-native-support: true
