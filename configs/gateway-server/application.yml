@@ -24,9 +24,9 @@ spring:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/v1/user/**
+            - Path=/v1/user**
           filters:
-            - 'RewritePath=/v1/user/(?<path>.*), /\${path}'
+            - 'RewritePath=/v1/user(?<path>.*), /\${path}'
 
         - id: order-service
           uri: lb://order-service
