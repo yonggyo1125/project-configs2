@@ -15,6 +15,7 @@ spring:
             - "RewritePath=/v1/hub(?:/(?<path>.*))?, /\\${path}"
 
         - id: product-service
+
           uri: lb://product-service
           predicates:
             - Path=/v1/product/**
