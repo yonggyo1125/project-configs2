@@ -43,6 +43,10 @@ spring:
               args:
                 name: orderServiceCircuitBreaker
                 fallbackUri: forward:/fallback/order
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1
+                key-resolver: "#{@orderKeyResolver}"
 
 springdoc:
   enable-native-support: true
