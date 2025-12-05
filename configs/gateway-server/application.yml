@@ -45,7 +45,7 @@ spring:
                 fallbackUri: forward:/fallback/order
             - name: RequestRateLimiter
               args:
-                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.replenishRate: 2
                 key-resolver: "#{@orderKeyResolver}"
 
 springdoc:
@@ -71,11 +71,11 @@ resilience4j:
   circuitbreaker:
     configs:
       default:
-        slidingWindowSize: 2                           # 슬라이딩 윈도우에 포함할 최근 호출 수 (통계 집계 기준)
+        slidingWindowSize: 100                           # 슬라이딩 윈도우에 포함할 최근 호출 수 (통계 집계 기준)
         # 윈도우 크기가 크면 안정적인 통계, 작으면 민감도가 증가
-        minimumNumberOfCalls: 1                         # 통계 집계를 시작하기 위한 최소 호출 수
+        minimumNumberOfCalls: 50                        # 통계 집계를 시작하기 위한 최소 호출 수
         # 이 값보다 호출이 적으면 실패율 기반 판단을 하지 않음
-        permittedNumberOfCallsInHalfOpenState: 2       # half-open 상태에서 허용할 시도 호출 수
+        permittedNumberOfCallsInHalfOpenState: 50       # half-open 상태에서 허용할 시도 호출 수
         # 이 수치만큼 성공하면 closed로 전환 가능
         automaticTransitionFromOpenToHalfOpenEnabled: true
         # true면 open 상태에서 waitDuration 만료 후 자동으로 half-open 전환 시도
